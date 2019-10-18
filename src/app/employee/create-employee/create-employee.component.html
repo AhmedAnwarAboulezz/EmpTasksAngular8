@@ -1,0 +1,13 @@
+<form action="">
+  <div>
+    <label for="">Name: </label>
+    <input type="text" name="name" [(ngModel)]="employee.name" />
+  </div>
+
+  <div>
+    <label for="">Department: </label>
+    <input type="text" name="department" [(ngModel)]="employee.department" />
+  </div>
+
+  <button (click)="handleSubmit()" [disabled]="isDisable">Save</button>
+</form>
