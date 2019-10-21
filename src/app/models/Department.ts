@@ -1,6 +1,5 @@
 export default class Department{
-    Id?:number=null;
-    DepartmentName:string="";
-    DepartmentNameEn:string="";
-    DepartmentNameAr:string="";
+    id?:number=null;
+    departmentNameEn:string="";
+    departmentNameAr:string="";
 }

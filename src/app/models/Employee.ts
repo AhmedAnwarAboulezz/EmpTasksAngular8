@@ -1,9 +1,8 @@
 export default class Employee {
-  Id?: number = null;
-  EmployeeName: string;
-  EmployeeNameAr: string;
-  EmployeeNameEn: string;
-  DepartmentId: string = "";
-  IsManager: boolean = false;
-  JoinDate: Date = new Date();
+  id?: number = null;
+  employeeNameAr: string;
+  employeeNameEn: string;
+  departmentId: number = 0;
+  isManager: boolean = false;
+  joinDate: Date = new Date();
 }

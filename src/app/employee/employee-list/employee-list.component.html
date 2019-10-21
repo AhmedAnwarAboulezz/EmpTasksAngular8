@@ -1,14 +1,25 @@
-<table *ngIf="!isLoading">
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Manager name</th>
-  </tr>
-  <tr *ngFor="let employee of employees">
-    <td>{{ employee.id }}</td>
-    <td>{{ employee.title }}</td>
-    <td>{{ employee.userId }}</td>
-  </tr>
+<table datatable class="table row-border hover" *ngIf="!isLoading">
+  <thead>
+      <tr>
+          <th>ID</th>
+          <th>NameAr</th>
+          <th>NameEn</th>
+          <th>is Manager?</th>
+          <th>Department Name</th>
+      
+        </tr>
+  </thead>
+<tbody>
+    <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.employeeNameAr }}</td>
+        <td>{{ employee.employeeNameEn }}</td>
+        <td>{{ employee.isManger }}</td>
+        <td>{{ employee.departmentAr }}</td>
+    
+      </tr>
+    
+</tbody>
 </table>
 
 <h1 *ngIf="isLoading">Loading...</h1>

@@ -10,6 +10,6 @@ import { DeleteTaskComponent } from './delete-task/delete-task.component';
 @NgModule({
   declarations: [TaskListComponent, CreateTaskComponent, UpdateTaskComponent, TaskDetailsComponent, DeleteTaskComponent],
   imports: [CommonModule],
-  exports: [TaskListComponent]
+  exports: [TaskListComponent, CreateTaskComponent, UpdateTaskComponent, TaskDetailsComponent, DeleteTaskComponent]
 })
 export class TaskModule {}
