@@ -5,10 +5,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from "./app.component";
-import { TaskModule } from "./task/task.module";
-import { EmployeeModule } from "./employee/employee.module";
 import { appRouting } from './app.routing';
+
+import { EmployeeModule } from "./employee/employee.module";
 import { DepartmentModule } from './department/department.module';
+import { EmployeetaskModule } from "./employeetask/employeetask.module";
+
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +20,7 @@ import { DepartmentModule } from './department/department.module';
     appRouting,
     EmployeeModule,
     DepartmentModule,
-    TaskModule,
+    EmployeetaskModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 2000,

@@ -25,7 +25,7 @@
       <select class="form-control" [(ngModel)]="employee.departmentId" name="departmentId" required>
         <option value="0" selected>Select Department</option>
         <option *ngFor="let Department of departments" value="{{ Department.id }}">
-          {{ Department.departmentAr }}
+          {{ Department.departmentEn }}
         </option>
       </select>
     </div>
