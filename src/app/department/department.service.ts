@@ -21,12 +21,12 @@ export class DepartmentService {
   }
 
   updateDepartment(department: Department) {
-    return this.http.post(`${this.baseURL}/update`, department);
+    return this.http.put(`${this.baseURL}/Update`, department);
   }
   getDepartmentsById(id: number) {
     return this.http.get(`${this.baseURL}/Get/${id}`);
   }
   deleteDepartment(id: number) {
-    return this.http.post(`${this.baseURL}/delete`, id);
+    return this.http.delete(`${this.baseURL}/delete/${id}`);
   }
 }

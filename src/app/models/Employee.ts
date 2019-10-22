@@ -4,5 +4,5 @@ export default class Employee {
   employeeNameEn: string;
   departmentId: number = 0;
   isManager: boolean = false;
-  joinDate: Date = new Date();
+  joinDate;
 }

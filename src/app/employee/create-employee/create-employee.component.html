@@ -12,7 +12,7 @@
   <div>
     <label for="">is Manager: </label>
     <div class="checkbox">
-      <select class="list-box tri-state" [(ngModel)]="employee.isManager" name="isManager">
+      <select class="list-box tri-state" [(ngModel)]="employee.isManger" name="isManger">
         <option value="true">True</option>
         <option value="false">False</option>
       </select>
@@ -22,10 +22,6 @@
   <div>
     <label for="">Department id: </label>
     <div class="form-group">
-      <!-- <select class="list-box tri-state" [(ngModel)]="employee.departmentId" name="departmentId">
-          <option selected="selected" value="1">Department1</option>
-          <option value="2">Department2</option>
-        </select> -->
       <select class="form-control" [(ngModel)]="employee.departmentId" name="departmentId" required>
         <option value="0" selected>Select Department</option>
         <option *ngFor="let Department of departments" value="{{ Department.id }}">

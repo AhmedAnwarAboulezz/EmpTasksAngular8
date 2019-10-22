@@ -1,3 +1,7 @@
+<a routerLink="/employees/create" class="btn btn-primary"> Create <i class="fa fa-plus"></i></a>
+<br/>
+<br/>
+
 <table datatable class="table row-border hover" *ngIf="!isLoading">
   <thead>
       <tr>
@@ -6,6 +10,7 @@
           <th>NameEn</th>
           <th>is Manager?</th>
           <th>Department Name</th>
+          <th>Actions</th>
       
         </tr>
   </thead>
@@ -16,7 +21,10 @@
         <td>{{ employee.employeeNameEn }}</td>
         <td>{{ employee.isManger }}</td>
         <td>{{ employee.departmentAr }}</td>
-    
+        <td> 
+          <a class="btn btn-xs btn-default" routerLink="/employees/edit/{{ employee.id }}"><i class="fa fa-edit"></i> Edit </a> &nbsp;
+          <a class="btn btn-xs btn-danger" (click)="handleDelete(employee.id)"><i class="fa fa-trash"></i> Delete </a>
+        </td>
       </tr>
     
 </tbody>

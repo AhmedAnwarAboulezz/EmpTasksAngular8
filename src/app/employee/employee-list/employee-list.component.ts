@@ -1,5 +1,7 @@
 import { EmployeeService } from "./../employee.service";
 import { Component, OnInit } from "@angular/core";
+import { ToastrService } from 'ngx-toastr';
+
 
 import Employee from "../../models/Employee";
 
@@ -12,7 +14,10 @@ export class EmployeeListComponent {
   employees: Employee[] = [];
   isLoading: boolean = true;
 
-  constructor(private employee_service: EmployeeService) {}
+  constructor(
+    private employee_service: EmployeeService,
+    private toast: ToastrService,
+  ) {}
 
   ngOnInit() {
     const refrence = this.employee_service.getEmployees();
@@ -26,5 +31,15 @@ export class EmployeeListComponent {
 
   getname() {
     console.log("getname");
+  }
+
+  handleDelete(id) {
+    const confirmed = confirm('Are You Sure You Wanna Delete This Item?');
+    confirmed &&
+    this.employee_service.deleteEmployee(id)
+    .subscribe(response => {
+      this.employees = this.employees.filter(employee => employee.id != id);
+      this.toast.success('Employee Was Deleted');
+    });
   }
 }

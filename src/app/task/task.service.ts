@@ -4,27 +4,26 @@ import EmployeeTask from '../models/EmployeeTask';
 
 @Injectable()
 export class TaskService {
-  baseURL = "https://jsonplaceholder.typicode.com/EmpTasks";
-  constructor(private http: HttpClient) { }
-  
-  getTasks() {
-    return this.http.get(`${this.baseURL}/GetTasks`);
+  baseURL = "http://localhost:44100/api/EmployeeTasks";
+
+  constructor(private http: HttpClient) {}
+
+  getEmployeeTasks() {
+    let path = `${this.baseURL}/GetAll`;
+    return this.http.get(path);
   }
 
-  createTask(employeetask: EmployeeTask) {
-    return this.http.post(`${this.baseURL}/CreateTask`, employeetask);
+  createEmployeeTask(employeeTask: EmployeeTask) {
+    return this.http.post(`${this.baseURL}/Add`, employeeTask);
   }
 
-  updateTask(employeetask: EmployeeTask) {
-    return this.http.post(`${this.baseURL}/EditTask`, employeetask);
+  updateEmployeeTask(employeeTask: EmployeeTask) {
+    return this.http.put(`${this.baseURL}/update`, employeeTask);
   }
-  getTaskById(id: number) {
-    return this.http.get(`${this.baseURL}/GetTaskById/${id}`);
+  getEmployeeTasksById(id: number) {
+    return this.http.get(`${this.baseURL}/Get/${id}`);
   }
-  deleteTask(id: number) {
-    return this.http.post(`${this.baseURL}/DeleteTask`, id);
-  }
-  getTasksByEmpId(empid: number) {
-    return this.http.get(`${this.baseURL}/GetTasksByEmpId/${empid}`);
+  deleteEmployeeTask(id: number) {
+    return this.http.delete(`${this.baseURL}/delete/${id}`);
   }
 }
